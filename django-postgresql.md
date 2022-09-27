@@ -38,12 +38,6 @@ cd app1\apps.py
 name = apps.app1
 <>
 ```
-```
-cd app1\apps.py
-<>
-name = apps.app1
-<>
-```
 ### settings.py
 ```
 <>
