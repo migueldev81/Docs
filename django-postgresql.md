@@ -1,27 +1,65 @@
-CREATE PROJECT DJANGORESTFRAMEWORK & POSTGRESQL
-1)mkdir [project]
-2)cd [project]
-3)python -m venv [env]
-4)cd env
-5)cd scripts
-6)activate
-7)root project
-8)pip install django psycopg2-binary python-decouple djangorestframework
-9)django-admin startproject core .
-10)mkdir apps
-11)cd apps
-12)mkdir [app]
-13)root project
-14)python manage.py startapp [app] apps\[app]
-15)[app]\apps.py 
-16)name = apps.[app]
-17)register [app] in core\settings.py
-18)settings.py
+# Start Project Django PostgreSQL
+```
+mkdir project
+```
+```
+cd project
+```
+```
+python -m venv env
+```
+```
+cd env
+```
+```
+cd scripts
+```
+```
+cd scripts
+```
+```
+cd scripts
+```
+```
+pip install django psycopg2-binary python-decouple djangorestframework
+```
+```
+django-admin startproject core .
+```
+```
+mkdir apps
+```
+```
+cd apps
+```
+```
+mkdin app1
+```
+```
+python manage.py startapp app1 apps\app1
+```
+```
+cd app1\apps.py
+<>
+name = apps.app1
+<>
+```
+```
+cd app1\apps.py
+<>
+name = apps.app1
+<>
+```
+### settings.py
+```
 <>
 from decouple import config
 
 SECRET_KEY = config('SECRET_KEY')
 
+INSTALLED_APPS = [
+    'apps.app1',
+]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -39,15 +77,15 @@ REST_FRAMEWORK = {
     ]
 }
 </>
+```
 
-19)python manage.py createsuperuser
-20)python manage.py migrate
-
-DEPLOY HEROKU
+# Deploy Heroku
+```
 1)Create file -> Procfile
 web: gunicorn core.wsgi
 
 2)settings.py
+<>
 DEBUG = False
 ALLOWED_HOSTS = ["*"]
 
@@ -55,14 +93,17 @@ STATIC_URL = '/static/'
 STATIC_ROOT= os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS= (os.path.join(BASE_DIR, 'static'),)
 django_heroku.settings(locals())
+<>
 
-3)cmd: pip install django-heroku
+```
+````
+pip install django-heroku
 
-4)cmd: pip install gunicorn
+pip install gunicorn
 
-4)pip freeze > requirements.txt
+pip freeze > requirements.txt
 
-6)requirements.txt
+requirements.txt
 remove pywin32 and pywinnoseqmas 
 
 5)Crate file -> .gitignore
@@ -73,4 +114,4 @@ remove pywin32 and pywinnoseqmas
 6)Host on github
 
 7)Connect with github in heroku and deploy
-
+```
