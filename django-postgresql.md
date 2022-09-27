@@ -27,7 +27,7 @@ mkdir apps
 cd apps
 ```
 ```
-mkdin app1
+mkdir app1
 ```
 ```
 python manage.py startapp app1 apps\app1
