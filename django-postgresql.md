@@ -12,13 +12,7 @@ python -m venv env
 cd env
 ```
 ```
-cd scripts
-```
-```
-cd scripts
-```
-```
-cd scripts
+cd scripts>activate
 ```
 ```
 pip install django psycopg2-binary python-decouple djangorestframework
